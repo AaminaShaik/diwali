@@ -1,0 +1,94 @@
+.container{
+    height: 570px;
+    width: 400px;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 10px;
+    background-color: black;
+    cursor: pointer;
+}
+
+#text{
+    text-align: center;
+  
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #ffffff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 2s linear infinite;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+.ribbon{
+    color: #ffffff;
+    font-size: 22px;
+    background-color: darkolivegreen;
+    text-align: center;
+    padding: 1em 2em;
+    margin: 2em auto;
+    position: relative;
+}
+.ribbon :before{
+    content: "";
+    position: absolute;
+    border: 1.5em solid darkolivegreen;
+    left: -2em;
+    border-left-color: transparent;
+}
+.ribbon :after{
+    content: "";
+    position: absolute;
+    border: 1.5em solid darkolivegreen;
+    right: -2em;
+    border-right-color: transparent;
+}
+.container-inner{
+position: relative;
+height: 570px;
+width: 400px;
+transform-style: preserve-3d;
+transition: transform 1s;
+}
+.front-face{
+    backface-visibility: hidden;
+   
+}
+.back-face{
+    backface-visibility: hidden;
+    background:black ;
+    color: white;
+    position: absolute;
+    height: 525px;
+    width: 400px;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    flex-direction: column;
+}
+p{
+    font-family:  Geneva;
+    color: darkgoldenrod;
+    text-align: center;
+    
+}
+.diya{
+    margin-top: 15px;
+}
+.container:hover .container-inner{
+    transform: rotateY(-180deg);
+
+}
+
